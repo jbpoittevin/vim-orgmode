@@ -16,10 +16,9 @@ install: doc indent ftdetect ftplugin syntax
 	done
 
 # cleanup
-clean: documentation
+clean:
 	@find . -name \*.pyc -o -name \*.py,cover -exec rm {} \;
 	@rm -rf ${PLUGIN}.vmb ${PLUGIN}.vmb.gz tmp files
-	cd $< && $(MAKE) $@
 
 # generate the vim ball package
 ${PLUGIN}.vmb: check build_vmb.vim clean
